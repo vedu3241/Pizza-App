@@ -6,7 +6,12 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "nodemon server.js",
-    "serve": "node server.js"
+    "serve": "node server.js",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "prod": "npm run production",
+    "production": "mix --production"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +22,11 @@
     "express-ejs-layouts": "^2.5.1"
   },
   "devDependencies": {
-    "nodemon": "^2.0.22"
+    "cross-env": "^7.0.3",
+    "laravel-mix": "^6.0.49",
+    "nodemon": "^2.0.22",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.63.4",
+    "sass-loader": "^12.1.0"
   }
 }

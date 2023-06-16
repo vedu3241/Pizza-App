@@ -7,6 +7,7 @@ const PORT = process.env.PORT || 9000;
 
 // app.use(expressLayout);
 
+app.use(express.static("public"));
 console.log(path.join(__dirname, "/resources/views"));
 
 app.set("views", path.join(__dirname, "/resources/views/"));
