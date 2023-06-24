@@ -14,7 +14,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var noty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(noty__WEBPACK_IMPORTED_MODULE_0__);
 
 
-var addToCart = document.querySelectorAll(".add-to-cart");
+var addToCart = document.querySelectorAll(".add-to-cart"); //took all add btn in an array
 var cartCounter = document.querySelector("#cartCounter");
 function updateCart(pizza) {
   axios__WEBPACK_IMPORTED_MODULE_1__["default"].post("/update-cart", pizza).then(function (res) {
@@ -28,6 +28,7 @@ function updateCart(pizza) {
   });
 }
 addToCart.forEach(function (btn) {
+  //added click event to each btn
   btn.addEventListener("click", function () {
     var pizza = JSON.parse(btn.dataset.pizza);
     updateCart(pizza);

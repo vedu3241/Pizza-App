@@ -251,10 +251,10 @@ nav li:last-child a:hover {
   background: #b23301;
 }
 
-nav li a {
+nav li a, input {
   transition: all 0.3s ease-in-out;
 }
-nav li a:hover {
+nav li a:hover, input:hover {
   color: #FE5F1E;
 }
 
