@@ -32,16 +32,18 @@
         >
       </div>
       <div>
-        <form action="">
+        <form action="/orders" method="POST">
           <input
-            class="border border-gray-400 p-2 w-1/2"
-            type="text"
-            placeholder="Address"
-          />
-          <input
+            name="phone"
             class="border border-gray-400 p-2 w-1/2"
             type="text"
             placeholder="Phone Number"
+          />
+          <input
+            name="address"
+            class="border border-gray-400 p-2 w-1/2"
+            type="text"
+            placeholder="Address"
           />
           <% if(user){ %>
           <div>
