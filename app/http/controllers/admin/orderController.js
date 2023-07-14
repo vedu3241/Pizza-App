@@ -3,15 +3,20 @@ const order = require("../../../models/order");
 function orderController() {
   return {
     index(req, res) {
-      oroder
-        .find({ status: { $nq: "completed" } }, null, { sort: { created: -1 } })
+      order
+        .find({ Status: { $ne: "completed" } }, null, {
+          sort: { createdAt: -1 },
+        })
         .populate("customerId", "-password")
-        .exec((err, orders) => {
+        .then((orders) => {
           if (req.xhr) {
             return res.json(orders);
           } else {
             return res.render("admin/orders");
           }
+        })
+        .catch((err) => {
+          console.error(err);
         });
     },
   };
