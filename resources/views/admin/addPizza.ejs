@@ -1,0 +1,79 @@
+<%- include('../partials/adminHeader.ejs') %>
+<section class="addPizza">
+  <div class="flex justify-center">
+    <h1 class="text-xl font-bold pb-4">Add Pizza</h1>
+  </div>
+  <div class="formContainer mx-auto">
+    <form action="/addPizza" method="POST">
+      <div class="mb-6">
+        <label
+          for="name"
+          class="block mb-2 text-sm font-bold text-gray-900 dark:text-black"
+          >Name</label
+        >
+        <input
+          name="pizzaName"
+          type="text"
+          id=""
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="eg. Margherita"
+          required
+        />
+      </div>
+
+      <div class="mb-6">
+        <label
+          for="image"
+          class="block mb-2 text-sm font-bold text-gray-900 dark:text-black"
+          >Image</label
+        >
+        <input
+          type="file"
+          id=""
+          name="pizzaImg"
+          required
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        />
+      </div>
+
+      <div class="mb-6">
+        <label
+          for=""
+          class="block mb-2 text-sm font-bold text-gray-900 dark:text-black"
+          >Price</label
+        >
+        <input
+          type="text"
+          id=""
+          name="pizzaPrice"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-60 p-2.5 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          required
+        />
+      </div>
+
+      <div class="mb-4">
+        <label
+          for="countries"
+          class="block mb-2 text-sm font-bold text-gray-900 dark:text-black"
+          >Select Size</label
+        >
+        <select
+          id="countries"
+          name="pizzaSize"
+          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block max-w-xs p-2.5 dark:bg-gray-600 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+        >
+          <option value="Large">Large</option>
+          <option selected value="Medium">Medium</option>
+          <option value="Small">Small</option>
+        </select>
+      </div>
+
+      <button
+        type="submit"
+        class="text-white btn-primary focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:focus:ring-blue-800"
+      >
+        Add
+      </button>
+    </form>
+  </div>
+</section>

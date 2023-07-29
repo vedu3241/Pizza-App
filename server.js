@@ -1,8 +1,9 @@
 require("dotenv").config();
 const express = require("express");
-const app = express();
-const ejs = require("ejs");
 const path = require("path");
+const ejs = require("ejs");
+const app = express();
+
 const PORT = process.env.PORT || 9000;
 
 const mongoose = require("mongoose");
@@ -61,6 +62,7 @@ app.use(express.json());
 app.use((req, res, next) => {
   res.locals.session = req.session;
   res.locals.user = req.user;
+  // console.log(res.locals.user.role);
   next();
 });
 

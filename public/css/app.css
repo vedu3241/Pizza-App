@@ -415,6 +415,25 @@ section.status {
   margin-top: 8px;
 }
 
+section.controlPanel {
+  background: #F8F8F8;
+  min-height: calc(100vh - 88px);
+}
+
+section.addPizza {
+  background: #F8F8F8;
+  min-height: calc(100vh - 88px);
+  padding: 4rem;
+}
+
+.formContainer {
+  display: flex;
+  justify-content: center;
+  background: white;
+  max-width: 25rem;
+  padding: 2rem 0rem;
+}
+
 @media (max-width: 1060px) {
   .container {
     max-width: 90%;

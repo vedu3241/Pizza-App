@@ -19,15 +19,15 @@
 </head>
 <nav class="container mx-auto items-center flex justify-between py-4">
   <div>
-    <a href="/">
+    <a href="/admin/controlPanel">
       <img src="/img/logo.png" alt="" />
     </a>
   </div>
   <div>
     <ul class="flex items-center">
-      <li class="ml-6"><a href="/">Menu</a></li>
+      <li class="ml-6"><a href="/admin/controlPanel">Control Panel</a></li>
+      <li class="ml-6"><a href="/admin/orders">All orders</a></li>
 
-      <li class="ml-6"><a href="#">Offers</a></li>
       <% if(user) {%>
       <li class="ml-6">
         <form action="/logout" method="POST">
@@ -37,30 +37,6 @@
       <%}else{%>
       <li class="ml-6"><a href="/register">Register</a></li>
       <li class="ml-6"><a href="/login">Login</a></li>
-      <%}%> <% if(user){ %> <% if(user.role == 'customer'){ %>
-      <li class="ml-6">
-        <a
-          href="/cart"
-          class="inline-block px-4 py-2 rounded-full flex items-center"
-        >
-          <span id="cartCounter" class="text-white font-bold pr-2"
-            ><%= session.cart ? session.cart.totalQty : '' %></span
-          >
-          <img src="/img/cart.png" alt="" />
-        </a>
-      </li>
-      <%}%> <%}else{%>
-      <li class="ml-6">
-        <a
-          href="/cart"
-          class="inline-block px-4 py-2 rounded-full flex items-center"
-        >
-          <span id="cartCounter" class="text-white font-bold pr-2"
-            ><%= session.cart ? session.cart.totalQty : '' %></span
-          >
-          <img src="/img/cart.png" alt="" />
-        </a>
-      </li>
       <%}%>
     </ul>
   </div>

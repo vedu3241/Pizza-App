@@ -1,0 +1,39 @@
+<%- include('../partials/adminHeader.ejs') %>
+<section>
+  <div class="contianer mx-auto pt-4">
+    <h2 class="font-bold text-lg text-center">Edit Menu</h2>
+
+    <table class="w-full table-auto bg-white mt-6">
+      <thead>
+        <tr>
+          <th class="px-4 py-2 text-left">Item name</th>
+          <th class="px-4 py-2 text-left">Edit</th>
+
+          <th class="px-4 py-2 text-left">Remove</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% if(menu.length){%> <% menu.forEach((item)=>{ %>
+        <tr>
+          <td class="px-4 py-2 border">
+            <a class="link"><%= item.name %></a>
+          </td>
+          <td class="px-4 py-2 border">
+            <a href="/admin/editMenu/<%= item.id %>">
+              <img src="/img/edit.png" alt="img not found" />
+            </a>
+          </td>
+
+          <td class="px-4 py-2 border">
+            <a href="/admin/removeMenuItem/<%= item.id %>">
+              <img src="/img/remove.png" alt="img not found" />
+            </a>
+          </td>
+        </tr>
+        <% }) %> <%}else{ %>
+        <h1>No item in menu</h1>
+        <% } %>
+      </tbody>
+    </table>
+  </div>
+</section>
