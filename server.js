@@ -29,12 +29,7 @@ let mongoStore = new MongoDbStore({
   mongooseConnection: connection,
   collection: "sessions",
 });
-
-// Emitter
-const eventEmitter = new Emitter();
-app.set("eventEmitter", eventEmitter);
 // Session config
-
 app.use(
   session({
     secret: process.env.COOKIE_SECRET,
@@ -45,6 +40,9 @@ app.use(
     // cookie: { maxAge: 100 * 60 },
   })
 );
+// Emitter
+const eventEmitter = new Emitter();
+app.set("eventEmitter", eventEmitter);
 
 //passport config
 const passportInit = require("./app/config/passport");
