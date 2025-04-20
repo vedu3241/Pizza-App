@@ -15,8 +15,10 @@ const Emitter = require("events");
 
 // Database connection
 
+// mongodb://127.0.0.1:27017/pizza
+
 mongoose
-  .connect("mongodb://127.0.0.1:27017/pizza", {
+  .connect("mongodb+srv://ved:test123@cluster0.1goshc7.mongodb.net/pizza_app", {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
